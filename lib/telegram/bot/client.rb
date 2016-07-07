@@ -58,6 +58,7 @@ module Telegram
       end
 
       def log_incoming_message(message)
+        return if message.from.nil?
         logger.info(
           format('Incoming message: text="%s" uid=%i', message, message.from.id)
         )
